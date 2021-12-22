@@ -1,1 +1,1 @@
-Zineddine Interview EventTypes Challenge
+Zineddine Interview Update EventTypes Challenge
