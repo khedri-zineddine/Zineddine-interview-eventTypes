@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules
+
+# Secrets before being sealed
+deployment/envHelmValues/*-secret.yaml
+
+# environment variables
+.env
+
+# VS Debug
+.vscode/
+
+# JS complied files
+dist/

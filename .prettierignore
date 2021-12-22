@@ -1,0 +1,15 @@
+.eslintignore
+.eslintcache
+.editorconfig
+.prettierignore
+Dockerfile*
+.dockerignore
+.gitignore
+.github/
+node_modules/
+dist/
+.env
+LICENSE
+README.md
+deployment/
+skaffold.yaml

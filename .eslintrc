@@ -1,0 +1,139 @@
+{
+  // Source: https://groups.google.com/forum/#!topic/eslint/ttZUG3v7vn0
+  // Plugins are a set of rules distributed as NPM package. Configs are pre-defined configuration of
+  // rules (either default or plugin based). Those two don’t have much in common. Plugins can include
+  // shareable configs, however configs can’t include plugin rules. So, in short, plugins contain
+  // definitions for custom rules, and configs explain whether those rules should be enabled or disabled
+  // and how they should be configured.
+
+  // See also: https://indepth.dev/setting-up-efficient-workflows-with-eslint-prettier-and-typescript/
+  // See also: https://stackoverflow.com/questions/53189200/whats-the-difference-between-plugins-and-extends-in-eslint#54522973
+  // See also: https://eslint.org/docs/user-guide/configuring#extending-configuration-files
+  // See also: https://eslint.org/docs/user-guide/configuring#configuring-plugins
+  // See also: https://github.com/typescript-eslint/typescript-eslint#can-i-use-all-of-the-existing-eslint-plugins-and-rules-without-any-changes
+  // See also: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules
+  // See also: eslint(https://github.com/eslint/eslint/blob/master/packages/eslint-config-eslint/default.yml):recommended(https://github.com/eslint/eslint/blob/master/conf/eslint-recommended.js)
+  // See also: https://gitter.im/eslint/eslint
+
+  "extends": [
+    "airbnb-typescript/base", // eslint-config-airbnb-typescript
+    "plugin:@typescript-eslint/recommended", // @typescript-eslint/eslint-plugin
+    "plugin:eslint-comments/recommended", // eslint-plugin-eslint-comments
+    "plugin:import/errors", // eslint-plugin-import
+    "plugin:import/warnings", // eslint-plugin-import
+    "plugin:promise/recommended", // eslint-plugin-promise
+    "plugin:functional/external-recommended", // eslint-plugin-functional
+    "plugin:functional/recommended", // eslint-plugin-functional
+    "plugin:unicorn/recommended", // eslint-plugin-unicorn
+    "plugin:prettier/recommended", // eslint-plugin-prettier
+    "prettier", // eslint-config-prettier
+    "prettier/@typescript-eslint", // eslint-config-prettier
+    "prettier/unicorn" // eslint-config-prettier
+  ],
+  "plugins": [
+    "@typescript-eslint", // @typescript-eslint/eslint-plugin
+    "eslint-comments", // eslint-plugin-eslint-comments
+    "import", // eslint-plugin-import
+    "promise", // eslint-plugin-promise
+    "functional", // eslint-plugin-functional
+    "unicorn", // eslint-plugin-unicorn
+    "prettier" // eslint-plugin-prettier
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  },
+  "rules": {
+    "unicorn/filename-case": 0,
+    "unicorn/prevent-abbreviations": 0,
+    "functional/no-try-statement": 0,
+    "unicorn/no-reduce": 0,
+    "functional/prefer-type-literal": 0,
+    "functional/no-conditional-statement": 0,
+    "functional/no-expression-statement": 1,
+    "import/no-unresolved": 0,
+    "functional/no-throw-statement": 0,
+    "functional/no-let": 1,
+    "functional/no-loop-statement": 0,
+    "functional/functional-parameters": 1,
+    "unicorn/no-null": 0,
+    "no-underscore-dangle": 0,
+    "functional/no-this-expression": 1,
+    "unicorn/no-abusive-eslint-disable": 1,
+    "eslint-comments/no-unlimited-disable": 1,
+    "functional/no-return-void": 1,
+    "functional/prefer-readonly-type": 0,
+    "functional/immutable-data": 1,
+    "promise/always-return": 1,
+    "import/named": 1,
+    "import/namespace": 1,
+    "no-param-reassign": 1,
+    "@typescript-eslint/naming-convention": 1,
+    "prefer-destructuring": 2,
+    "import/prefer-default-export": 1
+    // "sort-imports": [
+    //   "error",
+    //   {
+    //     "ignoreCase": false,
+    //     "ignoreDeclarationSort": false,
+    //     "ignoreMemberSort": false,
+    //     "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+    //     "allowSeparatedGroups": false
+    //   }
+    // ],
+    // "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": false, "minKeys": 2 }],
+    // "unicorn/filename-case": 0
+    // "sort-imports": 2,
+    // "no-debugger": "off",
+    // "no-underscore-dangle": "off",
+    // "no-param-reassign": "off",
+    // "no-console": "off",
+    // "no-shadow": "off",
+    // "lines-between-class-members": "off",
+    // "class-methods-use-this": "off",
+    // "no-prototype-builtins": "off",
+    // "unicorn/prevent-abbreviations": "off",
+    // "unicorn/no-null": "off",
+    // "import/no-extraneous-dependencies": "off",
+    // "import/prefer-default-export": "off",
+    // "import/no-default-export": "error",
+    // "@typescript-eslint/camelcase": "off",
+    // "@typescript-eslint/no-unused-vars": "off",
+    // "@typescript-eslint/no-unused-expressions": "off",
+    // "@typescript-eslint/no-explicit-an": "off",
+    // "@typescript-eslint/explicit-function-return-type": "off",
+    // "@typescript-eslint/no-var-requires": "off",
+    // "@typescript-eslint/no-explicit-any": "off",
+    // "@typescript-eslint/explicit-module-boundary-types": "off",
+    // "@typescript-eslint/no-use-before-define": [
+    //   "error",
+    //   {
+    //     "functions": false,
+    //     "classes": true,
+    //     "variables": true,
+    //     "typedefs": true
+    //   }
+    // ],
+    // "quotes": [
+    //   "error",
+    //   "single",
+    //   {
+    //     "allowTemplateLiterals": true
+    //   }
+    // ]
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     "endOfLine": "auto"
+    //   }
+    // ]
+  }
+}
